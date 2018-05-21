@@ -34,12 +34,12 @@ func Any() Matcher {
 // PrefixMatcher returns a matcher that matches a connection if it
 // starts with any of the strings in strs.
 func PrefixMatcher(strs ...string) Matcher {
-	pt := newPatriciaTreeString(strs...)
+	pt := newRadixTreeString(strs...)
 	return pt.matchPrefix
 }
 
 func prefixByteMatcher(list ...[]byte) Matcher {
-	pt := newPatriciaTree(list...)
+	pt := newRadixTree(list...)
 	return pt.matchPrefix
 }
 
